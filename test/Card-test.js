@@ -29,6 +29,7 @@ describe('Card', function() {
     const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     expect(card.correctAnswer).to.equal('object');
   });
+  
   it('should have an ID', function() {
     const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     expect(card.id).to.equal(1);
