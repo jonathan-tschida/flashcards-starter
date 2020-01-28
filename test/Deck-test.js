@@ -22,7 +22,7 @@ describe('Deck', function() {
     const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
 
     const deck = new Deck([card1, card2, card3]);
-    expect(deck.cards).to.eql([card1, card2, card3]);
+    expect(deck.cards).to.deep.equal([card1, card2, card3]);
   });
 
   it('should be able to count cards', function() {
