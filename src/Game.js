@@ -10,10 +10,10 @@ class Game {
   }
 
   start() {
-    let cards = [];
-    prototypeQuestions.forEach(object =>
-      cards.push(new Card(object.id, object.question, object.answers, object.correctAnswer)));
+    let cards = prototypeQuestions.map(object =>
+      object = new Card(object.id, object.question, object.answers, object.correctAnswer));
     this.deck = new Deck(cards);
+    this.deck.shuffle();
     this.currentRound = new Round(this.deck);
     this.printMessage(this.deck, this.currentRound);
     this.printQuestion(this.currentRound);
