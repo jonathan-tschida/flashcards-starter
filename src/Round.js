@@ -1,3 +1,4 @@
+const util = require('./util');
 const Turn = require('../src/Turn');
 
 class Round {
@@ -25,6 +26,12 @@ class Round {
 
   endRound() {
     console.log(`** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`);
+    if (this.calculatePercentCorrect() < 90) {
+      console.log(`**** Looks like you need more practice! Try again! ****`);
+      this.turns = 0;
+      this.incorrectGuesses = [];
+      util.main(this);
+    }
   }
 }
 
